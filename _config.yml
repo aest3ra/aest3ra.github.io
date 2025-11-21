@@ -5,7 +5,12 @@ theme: jekyll-theme-chirpy
 lang: en
 timezone: Asia/Seoul
 
+<<<<<<< HEAD
 title: aestera
+=======
+# Change to your timezone › https://zones.arilyn.cc
+timezone: Asia/Shanghai
+>>>>>>> upstream/master
 
 tagline: Hoist the Colours! # it will display as the sub-title
 
@@ -25,8 +30,14 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
+<<<<<<< HEAD
   name: PAK SEONGHUN
   email: aest3ra@gmail.com # change to your email address
+=======
+  name: your_full_name
+  email: example@domain.com # change to your email address
+  fediverse_handle: "@you@domain.com" # change to your fediverse handle or leave empty
+>>>>>>> upstream/master
   links:
     - https://x.com/aest3ra # change to your twitter homepage
     - https://github.com/aest3ra # change to your github homepage
