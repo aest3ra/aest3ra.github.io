@@ -6,7 +6,7 @@ categories: [HTB, Writeup]
 tags: [Windows, AD]
 description: HTB Active write-up
 math: true
-image: https://pub-c64d7608f6724ae48e3b199d196d7dcd.r2.dev/Blog/Active_Thumbnail.png
+image: https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/5837ac5e28291146a9f2a8a015540c28.png
 ---
 
 # TL;DR

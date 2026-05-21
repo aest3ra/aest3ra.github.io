@@ -30,9 +30,9 @@ social:
   links:
     - https://x.com/aest3ra # change to your twitter homepage
     - https://github.com/aest3ra # change to your github homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/aestera
+      # Uncomment below to add more social links
+      # - https://www.facebook.com/username
 
 # Site Verification Settings
 webmaster_verifications:
